@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #4CD103;
+    font-size: 110%;
+    font-weight: bold
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: black
+}
+.nav-links {
+    list-style-type: none;
+    display: flex
+}

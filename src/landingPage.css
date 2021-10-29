@@ -1,0 +1,32 @@
+#welcome {
+    text-align: center
+}
+.welcome-text {
+    width: 80%;
+    margin: auto;
+    text-align: center
+}
+.easy {
+    font-family: 'Dancing Script', cursive;
+}
+.vegan {
+    font-family: 'Bitter', serif;
+    color: #4CD103
+}
+.sitename {
+    font-size: 200%
+}
+.recipeDiv {
+    background-color: #4CD103;
+    padding-top: 10px;
+}
+#landingRecipe {
+    background-color: white;
+    margin: 0px auto;
+    border: 1px solid black;
+    width: 90%;
+    text-align: center
+}
+img {
+    width: 80%
+}
