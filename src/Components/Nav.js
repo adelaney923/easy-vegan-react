@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import nav from '../nav.css'
+import '../nav.css'
 
 const Nav = () => {
     return (
@@ -8,14 +8,14 @@ const Nav = () => {
         <nav>
           <Link to="/">
             <span className="easy">easy</span>
-            <span className="veganNav">vegan</span>
+            <span className="vegan">vegan</span>
           </Link>
-          <ul className='nav-links'>
-            <li>
-              <Link to="/">Why go Vegan</Link>
-            </li>
+          <ul className="nav-links">
             <li>
               <Link to="/">Recipes</Link>
+            </li>
+            <li>
+              <Link to="/">Why go Vegan</Link>
             </li>
           </ul>
         </nav>

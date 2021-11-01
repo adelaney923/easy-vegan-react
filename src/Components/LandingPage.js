@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import landingPage from '../landingPage.css'
+import '../landingPage.css'
 
 const LandingRecipe = () => {
     const [randomRecipe, setRandomRecipe] = useState({title: '', img: '', ingredients: [], instructions: []});
@@ -14,9 +14,9 @@ const LandingRecipe = () => {
         });
     };
 
-    // useEffect(() => {
-    //   makeApiCall();
-    // }, []);
+    useEffect(() => {
+      makeApiCall();
+    }, []);
 
     const ingredientsList = randomRecipe && randomRecipe.ingredients.map((ingredient) => {
       return (
@@ -49,7 +49,7 @@ const LandingRecipe = () => {
           </div>
         </div>
 
-        <div className="recipeDiv">
+        <div className="mobileHidden" id="recipeDiv">
           <p>Try your first vegan recipe today!</p>
           <div id="landingRecipe">
             <h3>{randomRecipe.title}</h3>

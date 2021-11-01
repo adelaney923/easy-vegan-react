@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  text-align: left;
 }
 
 /* Bottom right text */
@@ -13,4 +12,8 @@
   color: white;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+h4 {
+    color: white
 }

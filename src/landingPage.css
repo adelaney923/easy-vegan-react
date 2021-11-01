@@ -16,11 +16,14 @@
 .sitename {
     font-size: 200%
 }
+.mobileHidden {
+    display:none;
+}
 .recipeDiv {
-    background-color: #4CD103;
     padding-top: 10px;
 }
 #landingRecipe {
+    font-family: 'Roboto', sans-serif;
     background-color: white;
     margin: 0px auto;
     border: 1px solid black;

@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Nav from './Components/Nav';
 // import BootstrapNavbar from './Components/BootStrapNav';
 import LandingPage from './Components/LandingPage';
 import Recipes from './Components/Recipes';
 import WhyVegan from './Components/WhyVegan';
+import VeganNews from './Components/VeganNews';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <LandingPage />
         <Recipes />
         <WhyVegan />
+        <VeganNews />
       </main>
 
       <footer></footer>

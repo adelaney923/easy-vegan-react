@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import SelectedRecipe from "./SelectedRecipe";
+import SearchedRecipe from "./SearchedRecipe"
+import '../recipes.css'
 
 const Recipes = () => {
   const [loadingRecipes, setLoadingRecipes] = useState([]);
-  const [selectedRecipeId, setSelectedRecipeId] = useState('')
+  const [selectedRecipeId, setSelectedRecipeId] = useState("");
 
   const makeApiCall = () => {
     fetch(
@@ -11,7 +13,7 @@ const Recipes = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setLoadingRecipes(data.recipes)
+        setLoadingRecipes(data.recipes);
       });
   };
 
@@ -22,34 +24,41 @@ const Recipes = () => {
   //function that when you click on one of the random recipes displayed on load, it will give the id of the recipe
   //will setSelectedRecipeId to the id that the function takes in
   //can then pass it down to run new api call for that recipes info
-  const handleRecipeClick =(id) => {
-      setSelectedRecipeId(id)
-  }
+  const handleRecipeClick = (id) => {
+    setSelectedRecipeId(id);
+  };
 
-  const recipesToDisplay = loadingRecipes && loadingRecipes.map((recipe) => {
+  const inputSearch = useRef();
+
+  const recipesToDisplay =
+    loadingRecipes &&
+    loadingRecipes.map((recipe) => {
       return (
-          <div className='recipe-cards' style={{border: '1px solid black'}} onClick={() => handleRecipeClick(recipe.id)}>
-              <h4>{recipe.title}</h4>
-              <img src={recipe.image} alt={recipe.title} />
+        <div className="container" onClick={() => handleRecipeClick(recipe.id)}>
+          <img src={recipe.image} alt={recipe.title} />
+          <div className="text-block">
+            <p>{recipe.title}</p>
           </div>
-      )
-  })
+        </div>
+      );
+    });
 
-  const handleClick = () => {
-      console.log('yay')
-  }
+  const handleClickSearch = () => {
+    console.log(inputSearch);
+  };
 
   return (
     <div>
       <h1>Recipes</h1>
       <form>
-        <input type="text" placeholder="I'm craving..."></input>
-        <button onClick={handleClick}>Let's Eat</button>
+        <input ref={inputSearch} type="text" placeholder="I'm craving..."></input>
+        <button onClick={handleClickSearch}>Let's Eat</button>
       </form>
-      {recipesToDisplay}
+      <div className="recipesDisplay">{recipesToDisplay}</div>
       <SelectedRecipe id={selectedRecipeId} />
+      <SearchedRecipe input={inputSearch} />
     </div>
   );
-};;
+};
 
 export default Recipes;
