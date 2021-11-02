@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Card} from 'react-bootstrap';
 import '../veganNews.css'
 
 const VeganNews = () => {
@@ -16,22 +17,42 @@ const VeganNews = () => {
       .then((data) => setVegArticles(data.articles));
     }
 
-    // useEffect(() => {
-    //     makeApiCall()
-    // }, [])
+    useEffect(() => {
+        makeApiCall()
+    }, [])
     
     const articles = vegArticles && vegArticles.map((article) => {
         return (
-          <div className="container">
-            <img src={article.urlToImage} alt="" />
-            <div className="text-block">
-              <a href={article.url}>
-                <h4>{article.title}</h4>
-              </a>
-            </div>
-          </div>
+          <Card className="bg-dark text-white">
+            <Card.Img src={article.urlToImage} alt="" />
+            <Card.ImgOverlay>
+              <Card.Title className="articletitle">
+                <a href={article.url}>
+                  <p>{article.title}</p>
+                </a>
+              </Card.Title>
+            </Card.ImgOverlay>
+          </Card>
+          // <div className="container">
+          //   <img src={article.urlToImage} alt="" />
+          //   <div className="text-block">
+          //     <a href={article.url}>
+          //       <p>{article.title}</p>
+          //     </a>
+          //   </div>
+          // </div>
         );
     })
+
+//     <Card className="bg-dark text-white">
+//   <Card.Img src={article.urlToImage} alt='' />
+//   <Card.ImgOverlay>
+//     <Card.Title>
+//       <a href={article.url}>
+//           <p>{article.title}</p>
+//       </a></Card.Title>
+//   </Card.ImgOverlay>
+// </Card>
     return (
       <div id="newsArticles">
         <h1>Vegan News</h1>

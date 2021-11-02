@@ -28,8 +28,6 @@ const Recipes = () => {
     setSelectedRecipeId(id);
   };
 
-  const inputSearch = useRef();
-
   const recipesToDisplay =
     loadingRecipes &&
     loadingRecipes.map((recipe) => {
@@ -43,20 +41,26 @@ const Recipes = () => {
       );
     });
 
-  const handleClickSearch = () => {
-    console.log(inputSearch);
-  };
+  // const handleClickSearch = (event) => {
+  //   event.preventDefault()
+  //   // console.log(searchedTerm);
+  // };
+
+  // const handleChange = (event) =>
+  // setSearchedTerm(event.target.value)
+
 
   return (
     <div>
       <h1>Recipes</h1>
-      <form>
-        <input ref={inputSearch} type="text" placeholder="I'm craving..."></input>
+      <SearchedRecipe />
+      {/* <form>
+        <input value={searchedTerm} onChange={handleChange} type="text" placeholder="I'm craving..."></input>
         <button onClick={handleClickSearch}>Let's Eat</button>
-      </form>
+      </form> */}
       <div className="recipesDisplay">{recipesToDisplay}</div>
       <SelectedRecipe id={selectedRecipeId} />
-      <SearchedRecipe input={inputSearch} />
+
     </div>
   );
 };
