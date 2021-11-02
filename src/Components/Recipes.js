@@ -1,11 +1,12 @@
 import React, {useState, useEffect, useRef} from "react";
-import SelectedRecipe from "./SelectedRecipe";
-import SearchedRecipe from "./SearchedRecipe"
+import { Card } from "react-bootstrap";
+import SearchedRecipeForm from "./SearchedRecipeForm"
 import '../recipes.css'
 
-const Recipes = () => {
+const Recipes = (props) => {
   const [loadingRecipes, setLoadingRecipes] = useState([]);
-  const [selectedRecipeId, setSelectedRecipeId] = useState("");
+
+  console.log(props)
 
   const makeApiCall = () => {
     fetch(
@@ -21,46 +22,38 @@ const Recipes = () => {
     makeApiCall();
   }, []);
 
+  // const inputSearch = useRef();
+
   //function that when you click on one of the random recipes displayed on load, it will give the id of the recipe
   //will setSelectedRecipeId to the id that the function takes in
   //can then pass it down to run new api call for that recipes info
-  const handleRecipeClick = (id) => {
-    setSelectedRecipeId(id);
-  };
 
   const recipesToDisplay =
     loadingRecipes &&
     loadingRecipes.map((recipe) => {
       return (
-        <div className="container" onClick={() => handleRecipeClick(recipe.id)}>
-          <img src={recipe.image} alt={recipe.title} />
-          <div className="text-block">
-            <p>{recipe.title}</p>
-          </div>
-        </div>
+        <>
+          <Card
+            className="bg-dark text-white news-cards"
+          >
+            <Card.Img src={recipe.image} alt={recipe.title} />
+            <Card.ImgOverlay>
+              <Card.Title className="articletitle">
+                <a href={recipe.sourceUrl}>
+                <p>{recipe.title}</p>
+                </a>
+              </Card.Title>
+            </Card.ImgOverlay>
+          </Card>
+        </>
       );
     });
-
-  // const handleClickSearch = (event) => {
-  //   event.preventDefault()
-  //   // console.log(searchedTerm);
-  // };
-
-  // const handleChange = (event) =>
-  // setSearchedTerm(event.target.value)
-
 
   return (
     <div>
       <h1>Recipes</h1>
-      <SearchedRecipe />
-      {/* <form>
-        <input value={searchedTerm} onChange={handleChange} type="text" placeholder="I'm craving..."></input>
-        <button onClick={handleClickSearch}>Let's Eat</button>
-      </form> */}
+      <SearchedRecipeForm inputSearch={props.inputSearch} />
       <div className="recipesDisplay">{recipesToDisplay}</div>
-      <SelectedRecipe id={selectedRecipeId} />
-
     </div>
   );
 };

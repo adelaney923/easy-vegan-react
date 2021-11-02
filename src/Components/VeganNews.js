@@ -23,7 +23,7 @@ const VeganNews = () => {
     
     const articles = vegArticles && vegArticles.map((article) => {
         return (
-          <Card className="bg-dark text-white">
+          <Card className="bg-dark text-white news-cards">
             <Card.Img src={article.urlToImage} alt="" />
             <Card.ImgOverlay>
               <Card.Title className="articletitle">
@@ -33,14 +33,6 @@ const VeganNews = () => {
               </Card.Title>
             </Card.ImgOverlay>
           </Card>
-          // <div className="container">
-          //   <img src={article.urlToImage} alt="" />
-          //   <div className="text-block">
-          //     <a href={article.url}>
-          //       <p>{article.title}</p>
-          //     </a>
-          //   </div>
-          // </div>
         );
     })
 

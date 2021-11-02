@@ -11,7 +11,7 @@ const BootstrapNav = () => {
 
   return (
     <>
-      <Navbar bg="light" expand={false}>
+      <Navbar sticky='top' bg="light" expand={false}>
         <Container fluid>
           <Navbar.Brand href="#">
             <Link to="/">
@@ -38,6 +38,7 @@ const BootstrapNav = () => {
                   <Link to="/recipes">Recipes</Link>
                   <Link to="/whyvegan">Why go Vegan</Link>
                   <Link to="/vegannews">Vegan News</Link>
+                  <Link to='/getintouch'>Get in Touch</Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
