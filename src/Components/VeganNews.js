@@ -16,9 +16,9 @@ const VeganNews = () => {
       .then((data) => setVegArticles(data.articles));
     }
 
-    useEffect(() => {
-        makeApiCall()
-    }, [])
+    // useEffect(() => {
+    //     makeApiCall()
+    // }, [])
     
     const articles = vegArticles && vegArticles.map((article) => {
         return (
