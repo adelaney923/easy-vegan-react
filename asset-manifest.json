@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/easy-vegan-react/static/css/main.47a795b7.chunk.css",
+    "main.css": "/easy-vegan-react/static/css/main.5ec8a02d.chunk.css",
     "main.js": "/easy-vegan-react/static/js/main.092b4a8c.chunk.js",
     "main.js.map": "/easy-vegan-react/static/js/main.092b4a8c.chunk.js.map",
     "runtime-main.js": "/easy-vegan-react/static/js/runtime-main.8e2f12d2.js",
@@ -9,16 +9,16 @@
     "static/js/2.c60140de.chunk.js": "/easy-vegan-react/static/js/2.c60140de.chunk.js",
     "static/js/2.c60140de.chunk.js.map": "/easy-vegan-react/static/js/2.c60140de.chunk.js.map",
     "index.html": "/easy-vegan-react/index.html",
-    "precache-manifest.50adc6f22605bab3346d7c8570f0fce7.js": "/easy-vegan-react/precache-manifest.50adc6f22605bab3346d7c8570f0fce7.js",
+    "precache-manifest.c76ca9b8b88783a5ee33795d83f0dccb.js": "/easy-vegan-react/precache-manifest.c76ca9b8b88783a5ee33795d83f0dccb.js",
     "service-worker.js": "/easy-vegan-react/service-worker.js",
     "static/css/2.171a7357.chunk.css.map": "/easy-vegan-react/static/css/2.171a7357.chunk.css.map",
-    "static/css/main.47a795b7.chunk.css.map": "/easy-vegan-react/static/css/main.47a795b7.chunk.css.map"
+    "static/css/main.5ec8a02d.chunk.css.map": "/easy-vegan-react/static/css/main.5ec8a02d.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.8e2f12d2.js",
     "static/css/2.171a7357.chunk.css",
     "static/js/2.c60140de.chunk.js",
-    "static/css/main.47a795b7.chunk.css",
+    "static/css/main.5ec8a02d.chunk.css",
     "static/js/main.092b4a8c.chunk.js"
   ]
 }
