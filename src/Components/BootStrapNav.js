@@ -38,6 +38,7 @@ const BootstrapNav = () => {
                   <Link to="/recipes">Recipes</Link>
                   <Link to="/whyvegan">Why go Vegan</Link>
                   <Link to="/vegannews">Vegan News</Link>
+                  <Link to='/findrestaurants'>Find a Vegan Eatery</Link>
                   <Link to='/getintouch'>Get in Touch</Link>
                 </Nav>
               </Offcanvas.Body>

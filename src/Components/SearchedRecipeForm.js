@@ -19,8 +19,8 @@ const SearchedRecipeForm = (props) => {
         )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.recipes)
-          setSearchedRecipes(data.recipes)
+          console.log(data.results)
+          setSearchedRecipes(data.results)
         })
     }
 
