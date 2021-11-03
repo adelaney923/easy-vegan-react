@@ -14,7 +14,7 @@ const BootstrapNav = () => {
       <Navbar sticky="top" bg="light" expand={false}>
         <Container fluid>
           <Navbar.Brand href="#">
-            <Link to="/">
+            <Link to="/easy-vegan-react">
               <span className="easy">easy</span>
               <span className="vegan">vegan</span>
             </Link>

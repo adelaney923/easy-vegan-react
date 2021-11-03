@@ -21,7 +21,7 @@ function App() {
       {/* </header> */}
 
       <main>
-        <Route exact path="/">
+        <Route exact path="/easy-vegan-react">
           <LandingPage />
         </Route>
         <Route exact path="/recipes">
