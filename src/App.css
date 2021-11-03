@@ -2,3 +2,26 @@
       font-family: 'Bitter', serif;
       width: 100%
 }
+.recipeSearch {
+      display: flex;
+      justify-content: center;
+}
+
+h1 {
+      text-align: center;
+}
+
+/* restaurnat finder css */
+.finderintro {
+      text-align: center;
+}
+.restaurant-search {
+      display: flex;
+      justify-content: center;
+}
+
+/* recipe search form */
+.noresultsmessage {
+      text-align: center;
+      margin-top: 10px;
+}

@@ -5,8 +5,8 @@ import '../recipes.css'
 
 const Recipes = (props) => {
   const [loadingRecipes, setLoadingRecipes] = useState([]);
-
-  console.log(props)
+  const [searchedRecipes, setSearchedRecipes] = useState()
+  console.log(searchedRecipes)
 
   const makeApiCall = () => {
     fetch(
@@ -22,14 +22,7 @@ const Recipes = (props) => {
     makeApiCall();
   }, []);
 
-  // const inputSearch = useRef();
-
-  //function that when you click on one of the random recipes displayed on load, it will give the id of the recipe
-  //will setSelectedRecipeId to the id that the function takes in
-  //can then pass it down to run new api call for that recipes info
-
-  const recipesToDisplay =
-    loadingRecipes &&
+  const recipesToDisplay = !searchedRecipes && loadingRecipes &&
     loadingRecipes.map((recipe) => {
       return (
         <>
@@ -52,7 +45,7 @@ const Recipes = (props) => {
   return (
     <div>
       <h1>Recipes</h1>
-      <SearchedRecipeForm inputSearch={props.inputSearch} />
+      <SearchedRecipeForm inputSearch={props.inputSearch} searchedRecipes={searchedRecipes} setSearchedRecipes={setSearchedRecipes}/>
       <div className="recipesDisplay">{recipesToDisplay}</div>
     </div>
   );

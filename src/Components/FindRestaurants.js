@@ -1,42 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Card } from 'react-bootstrap';
 import axios from 'axios'
+import '../App.css'
 
 const FindRestaurants = () => {
+  const [searchedResults, setSearchedResults] = useState([]);
 
-
-// const yelp = require("yelp-fusion");
-
-// // Place holder for Yelp Fusion's API Key. Grab them
-// // from https://www.yelp.com/developers/v3/manage_app
-// const apiKey =
-//   "DFCabjGEOblXuYtY4Qq7u-OgKN3M4uxS6UGYuKsensdRR6Qe5atbWa29J-jrAmt-1NDGCPfcZ7sDbOznJ94G3RTL32o3s3owG65CTK8ZERzUhUsV67OYM7uZBx18YXYx";
-
-// const searchRequest = {
-//   term: "Four Barrel Coffee",
-//   location: "san francisco, ca",
-// };
-
-// const client = yelp.client(apiKey, {mode:'no-cors'});
-// console.log(client)
-
-// client
-//   .search(searchRequest)
-//   .then((response) => {
-//     const firstResult = response.jsonBody.businesses[0];
-//     const prettyJson = JSON.stringify(firstResult, null, 4);
-//     console.log(prettyJson);
-//   })
-//   .catch((e) => {
-//     console.log(e);
-//   });
-
-    const getRestaurantsFromApi = () => {
-
-      //using a proxy server cors-anywhere to get rid of the CROS probblem
-      //change location to be used with search field
+    const getRestaurantsFromApi = (input) => {
       axios
         .get(
-          `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?location=newyork`,
+          `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?location=${input}`,
           {
             //required authorization format from API
             headers: {
@@ -51,23 +24,52 @@ const FindRestaurants = () => {
           }
         )
         .then((res) => {
-          console.log(res.data.businesses);
-          //change the state of App to reflect on the result we are given from the API
-          //at the same time, setting the loading state to false
-        //   this.setState({ results: res.data.businesses, loading: false });
+          setSearchedResults(res.data.businesses);
         })
         .catch((err) => {
-          //create an error message to say there is no information return from the API
-        console.log(err)
+          console.log(err);
         });
     };
+    
 
-    useEffect(() => {
-        getRestaurantsFromApi()
-    }, [])
+    const locationSearch=useRef()
+
+    const handleSearch = (event) => {
+      event.preventDefault()
+      getRestaurantsFromApi(locationSearch.current.value)
+      locationSearch.current.value=''
+    }
+
+    console.log(searchedResults)
+    const restaurantList = searchedResults && searchedResults.map((restaurant) => {
+      return (
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={restaurant.image_url} />
+          <Card.Body>
+            <Card.Title>
+              <a href={restaurant.url}>{restaurant.name}</a>
+            </Card.Title>
+            <Card.Text>
+              Location: {restaurant.location.address1}
+              They're {restaurant.is_closed ? 'closed.' : 'open!'}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      );
+    })
 
 
-    return <h1>Restaurant Search</h1>
+    return (
+      <div className="findrestaurant">
+        <h1>Restaurant Finder</h1>
+        <p className='finderintro'>Being vegan has become so much easier! Many restaurants, cafes and bars now have vegan options.  Search with your location below to see what is in your area.</p>
+        <form className='restaurant-search'>
+          <input ref={locationSearch} type='text' placeholder="I'm located in..." />
+          <button onClick={handleSearch}>Search</button>
+        </form>
+        {restaurantList}
+      </div>
+    );
 }
 
 export default FindRestaurants

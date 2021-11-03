@@ -1,11 +1,12 @@
 import React, {useEffect, useState, useRef} from 'react'
-import {Link, Route, Redirect} from 'react-router-dom'
 import { Card } from 'react-bootstrap'
-import SearchedRecipe from './SearchedRecipe'
+import '../App.css'
+
 
 const SearchedRecipeForm = (props) => {
 
-    const [searchedRecipes, setSearchedRecipes] = useState([])
+    // const [searchedRecipes, setSearchedRecipes] = useState([])
+    const [noResults, setNoResults] = useState('')
     
     const handleSearch = (event) => {
         event.preventDefault();
@@ -15,18 +16,19 @@ const SearchedRecipeForm = (props) => {
 
     const makeApiCall = (input) => {
         fetch(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=410dd14f677a417eb5dda6c8be2a9f57&query=${input}&diet=vegan`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=410dd14f677a417eb5dda6c8be2a9f57&query=${input}&diet=vegan&sort=random&number=100`
         )
         .then((response) => response.json())
         .then((data) => {
           console.log(data.results)
-          setSearchedRecipes(data.results)
+          {data.totalResults === 0 ? setNoResults("Sorry we couldn't find that. Try searching for something else or browse through the recipes below!") : props.setSearchedRecipes(data.results)}
         })
     }
 
+    console.log(noResults)
     const searchedToDisplay =
-      searchedRecipes &&
-      searchedRecipes.map((recipe) => {
+      props.searchedRecipes &&
+      props.searchedRecipes.map((recipe) => {
         return (
           <>
             <Card className="bg-dark text-white news-cards">
@@ -45,18 +47,17 @@ const SearchedRecipeForm = (props) => {
 
     return (
       <div>
-        <form>
+        <form className="recipeSearch">
           <input
             ref={props.inputSearch}
             type="text"
             placeholder="I'm craving..."
           ></input>
-
-            <button onClick={handleSearch}>
-              Let's Eat
-            </button>
+          <button className="recipebtn" onClick={handleSearch}>
+            Let's Eat
+          </button>
         </form>
-
+        <p className="noresultsmessage">{noResults}</p>
         {searchedToDisplay}
       </div>
     );

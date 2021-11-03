@@ -1,3 +1,9 @@
 a:-webkit-any-link {
   text-decoration: none;
 }
+.nav-links {
+  color: black;
+}
+.easy {
+  color: black;
+}

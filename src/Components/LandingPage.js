@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import '../landingPage.css'
+import '../responsive.css'
 
 const LandingRecipe = () => {
     const [randomRecipe, setRandomRecipe] = useState({title: '', img: '', ingredients: [], instructions: []});
@@ -20,7 +22,7 @@ const LandingRecipe = () => {
 
     const ingredientsList = randomRecipe && randomRecipe.ingredients.map((ingredient) => {
       return (
-        <ul>
+        <ul className='landingIngred'>
           <li>{ingredient.originalString}</li>
         </ul>
       )
@@ -28,7 +30,7 @@ const LandingRecipe = () => {
 
     const instructionsList = randomRecipe && randomRecipe.instructions.map((instruction) => {
       return (
-        <ul>
+        <ul className='landingInstruc'>
           <li>{instruction.step}</li>
         </ul>
       )
@@ -47,22 +49,17 @@ const LandingRecipe = () => {
               Your place for a smooth transition into the world of veganism.
             </p>
           </div>
-        </div>
-
-        <div className="mobileHidden" id="recipeDiv">
-          <p>Try your first vegan recipe today!</p>
-          <div id="landingRecipe">
-            <h3>{randomRecipe.title}</h3>
-            <img src={randomRecipe.img} alt={randomRecipe.title} />
-            <div className="ingredients">
-              <h5>What You Need:</h5>
-              {ingredientsList}
-            </div>
-            <div className="insturctions">
-              <h5>How To:</h5>
-              {instructionsList}
-            </div>
-          </div>
+          
+          <Card className="hiddenMobile" style={{ width: "80%" }}>
+            <Card.Img variant="top" src={randomRecipe.img} />
+            <Card.Body>
+              <Card.Title>{randomRecipe.title}</Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>Ingredients: {ingredientsList}</ListGroupItem>
+              <ListGroupItem>Instructions: {instructionsList}</ListGroupItem>
+            </ListGroup>
+          </Card>
         </div>
       </>
     );
