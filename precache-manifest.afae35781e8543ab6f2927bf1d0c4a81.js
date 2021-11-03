@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3c86d6c52f5f37aeea0745d5b51f571a",
+    "revision": "748650dd746391232fe72c93609a3d9b",
     "url": "/easy-vegan-react/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/easy-vegan-react/static/css/2.171a7357.chunk.css"
   },
   {
-    "revision": "f53c2cb66e078b22174e",
-    "url": "/easy-vegan-react/static/css/main.5ec8a02d.chunk.css"
+    "revision": "d6e9bd242a1131eb471e",
+    "url": "/easy-vegan-react/static/css/main.197ecf99.chunk.css"
   },
   {
     "revision": "145f1866350d887971dd",
     "url": "/easy-vegan-react/static/js/2.c60140de.chunk.js"
   },
   {
-    "revision": "f53c2cb66e078b22174e",
+    "revision": "d6e9bd242a1131eb471e",
     "url": "/easy-vegan-react/static/js/main.092b4a8c.chunk.js"
   },
   {
