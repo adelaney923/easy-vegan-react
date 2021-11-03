@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/easy-vegan-react/static/css/main.12222a4d.chunk.css",
-    "main.js": "/easy-vegan-react/static/js/main.d04ee8ae.chunk.js",
-    "main.js.map": "/easy-vegan-react/static/js/main.d04ee8ae.chunk.js.map",
+    "main.js": "/easy-vegan-react/static/js/main.20f8c098.chunk.js",
+    "main.js.map": "/easy-vegan-react/static/js/main.20f8c098.chunk.js.map",
     "runtime-main.js": "/easy-vegan-react/static/js/runtime-main.8e2f12d2.js",
     "runtime-main.js.map": "/easy-vegan-react/static/js/runtime-main.8e2f12d2.js.map",
     "static/css/2.171a7357.chunk.css": "/easy-vegan-react/static/css/2.171a7357.chunk.css",
-    "static/js/2.04f33517.chunk.js": "/easy-vegan-react/static/js/2.04f33517.chunk.js",
-    "static/js/2.04f33517.chunk.js.map": "/easy-vegan-react/static/js/2.04f33517.chunk.js.map",
+    "static/js/2.065f918e.chunk.js": "/easy-vegan-react/static/js/2.065f918e.chunk.js",
+    "static/js/2.065f918e.chunk.js.map": "/easy-vegan-react/static/js/2.065f918e.chunk.js.map",
     "index.html": "/easy-vegan-react/index.html",
-    "precache-manifest.a8d9e1278368f24df04210b2d443329f.js": "/easy-vegan-react/precache-manifest.a8d9e1278368f24df04210b2d443329f.js",
+    "precache-manifest.440bbbf2d570ffae5f44dd6e5522072a.js": "/easy-vegan-react/precache-manifest.440bbbf2d570ffae5f44dd6e5522072a.js",
     "service-worker.js": "/easy-vegan-react/service-worker.js",
     "static/css/2.171a7357.chunk.css.map": "/easy-vegan-react/static/css/2.171a7357.chunk.css.map",
     "static/css/main.12222a4d.chunk.css.map": "/easy-vegan-react/static/css/main.12222a4d.chunk.css.map"
@@ -17,8 +17,8 @@
   "entrypoints": [
     "static/js/runtime-main.8e2f12d2.js",
     "static/css/2.171a7357.chunk.css",
-    "static/js/2.04f33517.chunk.js",
+    "static/js/2.065f918e.chunk.js",
     "static/css/main.12222a4d.chunk.css",
-    "static/js/main.d04ee8ae.chunk.js"
+    "static/js/main.20f8c098.chunk.js"
   ]
 }
