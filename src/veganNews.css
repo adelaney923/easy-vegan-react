@@ -8,3 +8,8 @@
 .news-cards {
   margin: 10px;
 }
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

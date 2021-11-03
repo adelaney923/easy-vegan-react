@@ -28,12 +28,13 @@ const Recipes = (props) => {
         <>
           <Card
             className="bg-dark text-white news-cards"
+            style={{ width: "20rem" }}
           >
             <Card.Img src={recipe.image} alt={recipe.title} />
             <Card.ImgOverlay>
               <Card.Title className="articletitle">
                 <a href={recipe.sourceUrl}>
-                <p>{recipe.title}</p>
+                  <p>{recipe.title}</p>
                 </a>
               </Card.Title>
             </Card.ImgOverlay>

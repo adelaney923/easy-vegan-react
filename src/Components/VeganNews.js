@@ -23,7 +23,10 @@ const VeganNews = () => {
     
     const articles = vegArticles && vegArticles.map((article) => {
         return (
-          <Card className="bg-dark text-white news-cards">
+          <Card
+            className="bg-dark text-white news-cards"
+            style={{ width: "20rem" }}
+          >
             <Card.Img src={article.urlToImage} alt="" />
             <Card.ImgOverlay>
               <Card.Title className="articletitle">
@@ -48,7 +51,7 @@ const VeganNews = () => {
     return (
       <div id="newsArticles">
         <h1>Vegan News</h1>
-        {articles}
+        <div className="articles">{articles}</div>
       </div>
     );
 }

@@ -50,8 +50,8 @@ const FindRestaurants = () => {
               <a href={restaurant.url}>{restaurant.name}</a>
             </Card.Title>
             <Card.Text>
-              Location: {restaurant.location.address1}
-              They're {restaurant.is_closed ? 'closed.' : 'open!'}
+              <p>Location: {restaurant.location.address1}</p>
+              <p>They're {restaurant.is_closed ? "closed." : "open!"}</p>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -62,12 +62,20 @@ const FindRestaurants = () => {
     return (
       <div className="findrestaurant">
         <h1>Restaurant Finder</h1>
-        <p className='finderintro'>Being vegan has become so much easier! Many restaurants, cafes and bars now have vegan options.  Search with your location below to see what is in your area.</p>
-        <form className='restaurant-search'>
-          <input ref={locationSearch} type='text' placeholder="I'm located in..." />
+        <p className="finderintro">
+          Being vegan has become so much easier! Many restaurants, cafes and
+          bars now have vegan options. Search with your location below to see
+          what is in your area.
+        </p>
+        <form className="restaurant-search">
+          <input
+            ref={locationSearch}
+            type="text"
+            placeholder="I'm located in..."
+          />
           <button onClick={handleSearch}>Search</button>
         </form>
-        {restaurantList}
+        <div className="restaurants">{restaurantList}</div>
       </div>
     );
 }

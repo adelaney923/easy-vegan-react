@@ -3,7 +3,46 @@
 @media only screen and (min-width: 768px) {
 .hiddenMobile {
     display: flex !important;
+    width: 40%;
+    margin: 10px;
 }
+.cardP {
+    margin-top: 5px;
+}
+.titleAndRec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titleCont {
+    margin: auto 10px;
+    font-size: 125%
+}
+.landingNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10% 5%;
+}
+.card-img-top {
+    height: 200px;
+    width: 220px;
+}
+.navCards {
+    width: 100%;
+}
+.nav-links {
+    width: 33%;
+}
+
+
 }
 @media only screen and (min-width: 1024px) {
+.card-img-top {
+    height: 200px;
+    width: 247px;
+}
+.titleCont {
+    font-size: 150%;
+}
 }

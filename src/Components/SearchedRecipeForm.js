@@ -12,6 +12,7 @@ const SearchedRecipeForm = (props) => {
         event.preventDefault();
         makeApiCall(props.inputSearch.current.value);
         props.inputSearch.current.value='';
+        setNoResults('')
     };
 
     const makeApiCall = (input) => {
@@ -25,13 +26,18 @@ const SearchedRecipeForm = (props) => {
         })
     }
 
-    console.log(noResults)
+
+
+
     const searchedToDisplay =
       props.searchedRecipes &&
       props.searchedRecipes.map((recipe) => {
         return (
           <>
-            <Card className="bg-dark text-white news-cards">
+            <Card
+              className="bg-dark text-white news-cards"
+              style={{ width: "20rem" }}
+            >
               <Card.Img src={recipe.image} alt={recipe.title} />
               <Card.ImgOverlay>
                 <Card.Title className="articletitle">
@@ -58,7 +64,7 @@ const SearchedRecipeForm = (props) => {
           </button>
         </form>
         <p className="noresultsmessage">{noResults}</p>
-        {searchedToDisplay}
+        <div className="searchedRecipes">{searchedToDisplay}</div>
       </div>
     );
 }
