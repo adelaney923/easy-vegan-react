@@ -40,7 +40,7 @@
 @media only screen and (min-width: 1024px) {
 .card-img-top {
     height: 200px;
-    width: 247px;
+    width: 100%;
 }
 .titleCont {
     font-size: 150%;
