@@ -34,18 +34,19 @@ const SearchedRecipeForm = (props) => {
       props.searchedRecipes.map((recipe) => {
         return (
           <>
-            <Card
-              className="bg-dark text-white news-cards"
-              style={{ width: "20rem" }}
-            >
-              <Card.Img src={recipe.image} alt={recipe.title} />
-              <Card.ImgOverlay>
-                <Card.Title className="articletitle">
-                  <a href={recipe.sourceUrl} target="_blank">
+            <Card className="rescards" style={{ width: "18rem" }}>
+              <Card.Img className="resimg" variant="top" src={recipe.image} />
+              <Card.Body>
+                <Card.Title>
+                  <a
+                    className="reslinks"
+                    href={recipe.sourceUrl}
+                    target="_blank"
+                  >
                     <p>{recipe.title}</p>
                   </a>
                 </Card.Title>
-              </Card.ImgOverlay>
+              </Card.Body>
             </Card>
           </>
         );

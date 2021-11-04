@@ -26,18 +26,19 @@ const VeganNews = () => {
     
     const articles = vegArticles && vegArticles.map((article) => {
         return (
-          <Card
-            className="bg-dark text-white news-cards"
-            style={{ width: "20rem" }}
-          >
-            <Card.Img src={article.urlToImage} alt="" />
-            <Card.ImgOverlay>
-              <Card.Title className="articletitle">
-                <a href={article.url} target="_blank">
+          <Card className="rescards" style={{ width: "18rem" }}>
+            <Card.Img
+              className="resimg"
+              variant="top"
+              src={article.urlToImage}
+            />
+            <Card.Body>
+              <Card.Title>
+                <a className='reslinks' href={article.url} target="_blank">
                   <p>{article.title}</p>
                 </a>
               </Card.Title>
-            </Card.ImgOverlay>
+            </Card.Body>
           </Card>
         );
     })
