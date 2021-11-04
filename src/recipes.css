@@ -1,24 +1,19 @@
 
-/* Bottom right text */
-/* .text-block {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 100px;
-  background-color: white;
-  color: black;
-  padding-left: 20px;
-  padding-right: 20px;
-} */
 .recipesDisplay {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 5%;
 }
 .articletitle {
-  background-color: white !important;
+  background-color: #51a807 !important;
+  opacity: .9;
+  padding: 5px;
 }
 .articletitle p {
-  color: black !important;
+  color: white !important;
   font-family: 'Bitter', serif !important;
+}
+.news-cards {
+  border: none !important;
 }

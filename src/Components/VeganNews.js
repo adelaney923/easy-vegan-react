@@ -14,7 +14,10 @@ const VeganNews = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setVegArticles(data.articles));
+      .then((data) => {
+      console.log(data)
+      setVegArticles(data.articles)
+      })
     }
 
     useEffect(() => {
@@ -30,7 +33,7 @@ const VeganNews = () => {
             <Card.Img src={article.urlToImage} alt="" />
             <Card.ImgOverlay>
               <Card.Title className="articletitle">
-                <a href={article.url}>
+                <a href={article.url} target="_blank">
                   <p>{article.title}</p>
                 </a>
               </Card.Title>
@@ -39,15 +42,7 @@ const VeganNews = () => {
         );
     })
 
-//     <Card className="bg-dark text-white">
-//   <Card.Img src={article.urlToImage} alt='' />
-//   <Card.ImgOverlay>
-//     <Card.Title>
-//       <a href={article.url}>
-//           <p>{article.title}</p>
-//       </a></Card.Title>
-//   </Card.ImgOverlay>
-// </Card>
+
     return (
       <div id="newsArticles">
         <h1>Vegan News</h1>

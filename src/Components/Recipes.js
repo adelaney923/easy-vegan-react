@@ -33,7 +33,7 @@ const Recipes = (props) => {
             <Card.Img src={recipe.image} alt={recipe.title} />
             <Card.ImgOverlay>
               <Card.Title className="articletitle">
-                <a href={recipe.sourceUrl}>
+                <a href={recipe.sourceUrl} target="_blank">
                   <p>{recipe.title}</p>
                 </a>
               </Card.Title>

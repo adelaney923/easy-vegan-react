@@ -1,5 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react";
+import '../App.css'
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const creds = require('../client_secret.json');
 let doc = {};
@@ -48,26 +49,28 @@ const GetInTouch = () => {
 
     return (
       <div className="contact-form">
-        <h1>Let's Talk</h1>
-        <input
-          type="text"
-          onChange={handleNameChange}
-          value={name}
-          placeholder="Name"
-        />
-        <input
-          type="email"
-          onChange={handleEmailChange}
-          value={email}
-          placeholder="Email"
-        />
-        <textarea
-          type="text"
-          onChange={handleMessageChange}
-          value={message}
-          placeholder="What's on your mind?"
-        />
-        <button onClick={handleSubmit}>submit</button>
+        <form>
+          <h3>Let's Talk</h3>
+          <input
+            type="text"
+            onChange={handleNameChange}
+            value={name}
+            placeholder="Name"
+          />
+          <input
+            type="email"
+            onChange={handleEmailChange}
+            value={email}
+            placeholder="Email"
+          />
+          <textarea
+            type="text"
+            onChange={handleMessageChange}
+            value={message}
+            placeholder="What's on your mind?"
+          />
+          <button onClick={handleSubmit}>Send</button>
+        </form>
       </div>
     );
 }

@@ -27,7 +27,7 @@ const LandingRecipe = () => {
         <div id="welcome">
           <div className="landingContent">
             <div className="titleAndRec">
-              <div className='titleCont'>
+              <div className="titleCont">
                 <h1 className="sitename">
                   <span className="easy">easy</span>
                   <span className="vegan">vegan</span>
@@ -41,11 +41,11 @@ const LandingRecipe = () => {
               </div>
 
               <Card className="hiddenMobile">
-                <p className='cardP'>Recipe of the Day:</p>
+                <p className="cardP">Recipe of the Day:</p>
                 <Card.Img variant="bottom" src={randomRecipe.img} />
                 <Card.Body>
                   <Card.Title>
-                    <a href={randomRecipe.url}>
+                    <a className='hoverlinks' href={randomRecipe.url} target="_blank">
                       <h6>{randomRecipe.title}</h6>
                     </a>
                   </Card.Title>

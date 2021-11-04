@@ -47,7 +47,9 @@ const FindRestaurants = () => {
           <Card.Img variant="top" src={restaurant.image_url} />
           <Card.Body>
             <Card.Title>
-              <a href={restaurant.url}>{restaurant.name}</a>
+              <a href={restaurant.url} target="_blank">
+                {restaurant.name}
+              </a>
             </Card.Title>
             <Card.Text>
               <p>Location: {restaurant.location.address1}</p>

@@ -16,6 +16,13 @@
 .navCards {
     width: 20rem;
     margin: auto;
+    /* border: 1px solid black !important; */
+}
+.nav-links:hover {
+    color: #51a807 !important;
+}
+.hoverlinks:hover {
+    color: #51a807 !important
 }
 .easy {
     font-family: 'Dancing Script', cursive;

@@ -1,37 +1,97 @@
 .App {
-      font-family: 'Bitter', serif;
-      width: 100%
+  font-family: "Bitter", serif;
+  width: 100%;
 }
 .recipeSearch {
-      display: flex;
-      justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
-      text-align: center;
+  text-align: center;
 }
 
 /* restaurnat finder css */
+button {
+      background-color: #51a807;
+      border: none;
+      color: white;
+}
 .finderintro {
-      text-align: center;
+  text-align: center;
 }
 .restaurant-search {
-      display: flex;
-      justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .restaurants {
-     display: flex;
-flex-wrap: wrap;
-justify-content: center; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.restaurant-search input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid lightgray;
 }
 
 /* recipe search form */
 .noresultsmessage {
-      text-align: center;
-      margin-top: 10px;
+  text-align: center;
+  margin-top: 10px;
 }
 .searchedRecipes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.recipeSearch input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid lightgray;
+}
+
+/* get in touch css */
+.contact-form {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 90vh;
+  margin: auto;
+}
+.contact-form form {
+border-radius: 8px;
+border: 1px solid lightgray;
+  width: 300px;
+  height: 350px;
+  background: white;
+  font-family: 'Bitter', serif !important;
+}
+.contact-form input,
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin-left: 10px !important;
+  background: none;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid #51a807;
+  justify-content: center;
+}
+.contact-form textarea {
+      height: 35%;
+}
+.contact-form button {
+  float: right;
+  padding: 8px 12px;
+  margin: 8px 20px;
+  background-color: #51a807;
+border: none;
+color: white;
+  cursor: pointer;
+}
+.contact-form h3 {
+      text-align: center;
+      margin-top: 15px;
 }
