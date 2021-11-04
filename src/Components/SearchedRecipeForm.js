@@ -26,6 +26,16 @@ const SearchedRecipeForm = (props) => {
         })
     }
 
+    const makeClickedApi = (id) => {
+      fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=410dd14f677a417eb5dda6c8be2a9f57&includeNutrition=false`)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+    } 
+
+    const seeRecipe = (info) => {
+      makeClickedApi(info)
+    }
+
 
 
 
@@ -37,14 +47,8 @@ const SearchedRecipeForm = (props) => {
             <Card className="rescards" style={{ width: "18rem" }}>
               <Card.Img className="resimg" variant="top" src={recipe.image} />
               <Card.Body>
-                <Card.Title>
-                  <a
-                    className="reslinks"
-                    href={recipe.sourceUrl}
-                    target="_blank"
-                  >
-                    <p>{recipe.title}</p>
-                  </a>
+                <Card.Title onClick={() => seeRecipe(recipe.id)}>
+                    <p className="reslinks">{recipe.title}</p>
                 </Card.Title>
               </Card.Body>
             </Card>

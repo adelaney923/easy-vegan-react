@@ -9,6 +9,7 @@ const GetInTouch = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const [buttonText, setButtonText] = useState('Send')
 
     const makeInitialCall = async () => {
       doc = new GoogleSpreadsheet(
@@ -36,7 +37,9 @@ const GetInTouch = () => {
       setMessage(e.target.value);
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event) => {
+      event.preventDefault()
+      setButtonText('Thanks!')
       let newRow = {
         Name: name,
         Email: email,
@@ -45,6 +48,9 @@ const GetInTouch = () => {
 
       let sheet = await doc.sheetsByIndex[0];
       sheet.addRow(newRow);
+      setName('')
+      setEmail('')
+      setMessage('')
     };
 
     return (
@@ -69,7 +75,7 @@ const GetInTouch = () => {
             value={message}
             placeholder="What's on your mind?"
           />
-          <button onClick={handleSubmit}>Send</button>
+          <button onClick={handleSubmit}>{buttonText}</button>
         </form>
       </div>
     );
