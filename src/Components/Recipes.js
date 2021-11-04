@@ -10,7 +10,7 @@ const Recipes = (props) => {
 
   const makeApiCall = () => {
     fetch(
-      "https://api.spoonacular.com/recipes/random?apiKey=410dd14f677a417eb5dda6c8be2a9f57&number=10&tags=vegan"
+      "https://api.spoonacular.com/recipes/random?apiKey=410dd14f677a417eb5dda6c8be2a9f57&number=20&tags=vegan"
     )
       .then((response) => response.json())
       .then((data) => {

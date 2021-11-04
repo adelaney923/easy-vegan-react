@@ -33,6 +33,9 @@
 .hiddenMobile {
     display: none !important;
 }
+a {
+    color: black !important;
+}
 .landingLi{
     margin: 0px auto;
 }

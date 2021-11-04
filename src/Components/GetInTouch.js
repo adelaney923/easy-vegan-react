@@ -61,7 +61,7 @@ const GetInTouch = () => {
           value={email}
           placeholder="Email"
         />
-        <input
+        <textarea
           type="text"
           onChange={handleMessageChange}
           value={message}
