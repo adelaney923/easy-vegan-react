@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react'
 import { Card } from 'react-bootstrap'
+import SelectedRecipe from './SelectedRecipe'
 import '../App.css'
 
 
@@ -7,6 +8,7 @@ const SearchedRecipeForm = (props) => {
 
     // const [searchedRecipes, setSearchedRecipes] = useState([])
     const [noResults, setNoResults] = useState('')
+    const [searchRecipeId, setSearchRecipeId] = useState('')
     
     const handleSearch = (event) => {
         event.preventDefault();
@@ -26,18 +28,22 @@ const SearchedRecipeForm = (props) => {
         })
     }
 
-    const makeClickedApi = (id) => {
-      fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=410dd14f677a417eb5dda6c8be2a9f57&includeNutrition=false`)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-    } 
+    // const getUrlApiCall = (id) => {
+    //   fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=410dd14f677a417eb5dda6c8be2a9f57&includeNutrition=false`)
+    //   .then((response) => response.json())
+    //   .then((data) => setSearchRecipeUrl(data.sourceUrl))
+    // } 
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
 
-    const seeRecipe = (info) => {
-      makeClickedApi(info)
+    const setOptions = (id) => {
+      setSearchRecipeId(id)
+      scrollToTop()
     }
-
-
-
 
     const searchedToDisplay =
       props.searchedRecipes &&
@@ -47,7 +53,7 @@ const SearchedRecipeForm = (props) => {
             <Card className="rescards" style={{ width: "18rem" }}>
               <Card.Img className="resimg" variant="top" src={recipe.image} />
               <Card.Body>
-                <Card.Title onClick={() => seeRecipe(recipe.id)}>
+                <Card.Title onClick={() => setOptions(recipe.id)}>
                     <p className="reslinks">{recipe.title}</p>
                 </Card.Title>
               </Card.Body>
@@ -68,6 +74,7 @@ const SearchedRecipeForm = (props) => {
             Let's Eat
           </button>
         </form>
+        <SelectedRecipe selectedId={searchRecipeId} />
         <p className="noresultsmessage">{noResults}</p>
         <div className="searchedRecipes">{searchedToDisplay}</div>
       </div>

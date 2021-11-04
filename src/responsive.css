@@ -34,6 +34,12 @@
 .nav-links {
     width: 33%;
 }
+.selectedResimg {
+    height: 50% !important;
+    width: 80% !important;
+    object-fit: cover !important;
+    margin: auto;
+}
 
 }
 @media only screen and (min-width: 1024px) {
@@ -44,4 +50,5 @@
 .titleCont {
     font-size: 150%;
 }
+
 }

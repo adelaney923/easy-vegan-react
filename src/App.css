@@ -105,3 +105,11 @@ color: white;
       text-align: center;
       margin-top: 15px;
 }
+
+/* selected recipe css */
+.selectedRes {
+      display: flex;
+      justify-content: center;
+      margin: 10px auto;
+}
+
