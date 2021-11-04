@@ -3,7 +3,7 @@
 ## Project Links
 
 - [github repo](https://git.generalassemb.ly/adelaney923/easy-vegan-react)
-- [add your deployment link]()
+- [Link to Site](https://adelaney923.github.io/easy-vegan-react/#/)
 
 ## Project Description
 
