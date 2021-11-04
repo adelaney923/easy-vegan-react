@@ -34,6 +34,16 @@ button {
       outline: none;
       border-bottom: 1px solid lightgray;
 }
+.reslinks:hover {
+      color: #51a807 !important;
+}
+.resimg {
+      height: 150px;
+      object-fit: cover;
+}
+.rescards {
+      margin: 10px;
+}
 
 /* recipe search form */
 .noresultsmessage {

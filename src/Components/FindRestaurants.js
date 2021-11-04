@@ -43,11 +43,11 @@ const FindRestaurants = () => {
     console.log(searchedResults)
     const restaurantList = searchedResults && searchedResults.map((restaurant) => {
       return (
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={restaurant.image_url} />
+        <Card className='rescards' style={{ width: "18rem" }}>
+          <Card.Img className='resimg' variant="top" src={restaurant.image_url} />
           <Card.Body>
             <Card.Title>
-              <a href={restaurant.url} target="_blank">
+              <a className='reslinks' href={restaurant.url} target="_blank">
                 {restaurant.name}
               </a>
             </Card.Title>
