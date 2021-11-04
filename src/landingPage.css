@@ -10,9 +10,12 @@
 }
 
 .navCards {
-    width: 20rem;
+    width: 22rem;
     margin: auto;
     /* border: 1px solid black !important; */
+}
+.card-img-top {
+    object-fit: cover !important;
 }
 .nav-links:hover {
     color: #51a807 !important;
