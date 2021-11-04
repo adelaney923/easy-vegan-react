@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/easy-vegan-react/precache-manifest.afae35781e8543ab6f2927bf1d0c4a81.js"
+  "/easy-vegan-react/precache-manifest.0f271a11c822fdd7e55d8d29bb9eb3fb.js"
 );
 
 self.addEventListener('message', (event) => {
